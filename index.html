@@ -7,6 +7,20 @@
     <title>Library</title>
 </head>
 <body>
+    <button command="show-modal" commandfor="new-book-form" class="add-new-btn">Add new book</button>
+
+    <dialog id="new-book-form">
+        <p>This dialog was opened using an invoker command.</p>
+        <form action="submit">
+            <label for="">Title</label>
+            <input type="text" name="book-title" id="book-title">
+            <label for="book-author">Author</label>
+            <input type="text" name="book-author" id="book-author">
+            <label for="num-pages">Number of pages</label>
+            <input type="number" name="num-pages" id="num-pages">
+        </form>
+        <button commandfor="new-book-form" command="close">Close</button>
+    </dialog>
     <script src="./script.js"></script>
 </body>
 </html>
