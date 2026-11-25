@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 function Book(title, author, pages, id) {
   // the constructor...
@@ -15,17 +15,24 @@ function addBookToLibrary(title, author, pages) {
   // take params, create a book then store it in the array
   const id = crypto.randomUUID();
   let book = new Book(title, author, pages, id)
-  myLibrary.push(book);
-  return myLibrary;
+  myLibrary =  [...myLibrary, book];
+  return
 }
 
+let newBook = new Book("me","you",33,111111);
+console.log(newBook);
+
+const libraryDiv = document.querySelector("#library");
+
 function  displayBooks() {
-  for (let book in myLibrary) {
+  myLibrary.map(book => {
     const bookDiv = document.createElement("div");
     bookDiv.classList.add("book-card");
-    for (let info in book){
-      bookDiv.textContent(info)
+    console.log(book);
+    for (let key in book){
+      bookDiv.textContent += `${key}:${book[key]}`;
     }
-    document.appendChild(bookDiv);
+    libraryDiv.appendChild(bookDiv);
+  })  
   }
-}
+
