@@ -28,9 +28,14 @@ function  displayBooks() {
   myLibrary.map(book => {
     const bookDiv = document.createElement("div");
     bookDiv.classList.add("book-card");
+    bookDiv.dataset.id = book.id;
     console.log(book);
     for (let key in book){
-      bookDiv.textContent += `${key}:${book[key]}`;
+      if (key === "id") {
+        continue
+      } else {
+        bookDiv.textContent += `${key}:${book[key]}`;
+      }
     }
     libraryDiv.appendChild(bookDiv);
   })  
