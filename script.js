@@ -23,6 +23,8 @@ let newBook = new Book("me","you",33,111111);
 console.log(newBook);
 
 const libraryDiv = document.querySelector("#library");
+const deleteBookBtn = document.createElement("button.delete-book");
+const markAsReadBtn = document.createElement("button.mark-as-read");
 
 function  displayBooks() {
   myLibrary.map(book => {
@@ -37,6 +39,8 @@ function  displayBooks() {
         bookDiv.textContent += `${key}:${book[key]}`;
       }
     }
+    bookDiv.appendChild(deleteBookBtn);
+    bookDiv.appendChild(markAsReadBtn);
     libraryDiv.appendChild(bookDiv);
   })  
   }
