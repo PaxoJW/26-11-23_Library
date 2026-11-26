@@ -41,12 +41,14 @@ function displayBooks() {
     deleteBookBtn.innerText = "Delete";
     markAsReadBtn.innerText = "Read/Unread";
 
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+
     for (let key in book){
       if (key === "id") {
         continue
       } else if (key === "isRead") {
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
+        
         checkbox.checked = book.isRead;
         checkbox.addEventListener("change", () => {
           book.isRead = checkbox.checked;
