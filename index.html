@@ -7,19 +7,23 @@
     <title>Library</title>
 </head>
 <body>
-    <button command="show-modal" commandfor="new-book-form" class="add-new-btn">Add new book</button>
+    <button command="show-modal" commandfor="new-book-dialog" class="add-new-btn">Add new book</button>
     <div id="library"></div>
-    <dialog id="new-book-form">
+    <dialog id="new-book-dialog">
         <p>This dialog was opened using an invoker command.</p>
-        <form action="submit">
-            <label for="">Title</label>
-            <input type="text" name="book-title" id="book-title">
-            <label for="book-author">Author</label>
-            <input type="text" name="book-author" id="book-author">
-            <label for="num-pages">Number of pages</label>
-            <input type="number" name="num-pages" id="num-pages">
+        <form action="submit" id="new-book-form">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author">
+            <label for="pages">Number of pages</label>
+            <input type="number" name="pages" id="pages">
+            <label for="isRead">Read</label>
+            <input type="checkbox" name="isRead" id="isRead">
+            <button class="add-btn">Add</button>
+            <button class="clear-btn">Clear</button>
         </form>
-        <button commandfor="new-book-form" command="close">Close</button>
+        <button commandfor="new-book-dialog" command="close">Close</button>
     </dialog>
     <script src="./script.js"></script>
 </body>
