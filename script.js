@@ -43,5 +43,10 @@ function  displayBooks() {
     bookDiv.appendChild(markAsReadBtn);
     libraryDiv.appendChild(bookDiv);
   })  
-  }
+}
 
+const newBookForm = document.querySelector("form")
+
+newBookForm.addEventListener("click", (e) => {
+  e.preventDefault();
+})
